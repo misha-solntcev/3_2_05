@@ -30,25 +30,43 @@ namespace _3_2_05
             return myChar;
         }
 
+        // Основная функция поиска слов текста, в которых есть хотя бы одна цифра.
+        static string FindDigit(char[][] myChar)
+        {
+            string newString = "";
+            for (int i = 0; i < myChar.Length; i++)
+            {
+                bool flag = false;
+                for (int j = 0; j < myChar[i].Length; j++)
+                {
+                    if (Char.IsDigit(myChar[i][j]) == true)
+                    {
+                        flag = true;
+                        break;
+                    }
+                }
+                // Переводим обратно массив букв (char[]) в слова (string).
+                string newWord = "";                
+                {
+                    foreach (char ch in myChar[i])
+                        newWord += ch;
+                }
+
+                if (flag == true)
+                    newString += newWord + " ";
+            }
+            return newString;
+        }
+
+        // Главная функция Main.
         static void Main(string[] args)
         {
             string myString = "abcd1 defg fh2aslk fdgjl.";
-            char[][] myChar = WordsToChars(StringToWords(myString));
-            foreach (char[] word in myChar)
-            {
-                foreach (char ch in word)
-                {
-                    Console.Write(ch);
-                }
-                Console.WriteLine();
-            }
-                
-                
-                    
+            
+            string newString = FindDigit(WordsToChars(StringToWords(myString)));
+            Console.WriteLine(newString);
 
             Console.ReadKey();
-
-                
         }
     }
 }
