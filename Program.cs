@@ -21,7 +21,7 @@ namespace _3_2_05
             string[] myWords = myString.Split(sep, StringSplitOptions.RemoveEmptyEntries);
             return myWords;
         }
-        // Функция преобразования массив слов в ступенчатый массив букв.
+        // Функция преобразования массива слов в ступенчатый массив букв.
         static char[][] WordsToChars(string[] myWords)
         {
             char[][] myChar = new char[myWords.Length][];
@@ -58,7 +58,7 @@ namespace _3_2_05
         // Главная функция Main.
         static void Main(string[] args)
         {
-            string myString = "abcd1 defg fh2aslk fdgjl.";            
+            string myString = "abcd1 defg fh2aslk fdgj76l.";            
             string newString = FindDigit(WordsToChars(StringToWords(myString)));
             Console.WriteLine(newString);
             Console.ReadKey();
