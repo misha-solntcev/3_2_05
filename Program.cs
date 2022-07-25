@@ -29,7 +29,6 @@ namespace _3_2_05
                 myChar[i] = myWords[i].ToCharArray();
             return myChar;
         }
-
         // Основная функция поиска слов текста, в которых есть хотя бы одна цифра.
         static string FindDigit(char[][] myChar)
         {
@@ -51,21 +50,17 @@ namespace _3_2_05
                     foreach (char ch in myChar[i])
                         newWord += ch;
                 }
-
                 if (flag == true)
                     newString += newWord + " ";
             }
             return newString;
         }
-
         // Главная функция Main.
         static void Main(string[] args)
         {
-            string myString = "abcd1 defg fh2aslk fdgjl.";
-            
+            string myString = "abcd1 defg fh2aslk fdgjl.";            
             string newString = FindDigit(WordsToChars(StringToWords(myString)));
             Console.WriteLine(newString);
-
             Console.ReadKey();
         }
     }
